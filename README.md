@@ -2,6 +2,39 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Features
+
+In the project website, you can use these widgets :
+
+1. Calendar widget
+2. Clock widget
+3. Reminder widget
+4. Timer widget
+
+There is new widget has been implemented.
+
+### `Progress Tracker Widget`
+
+1. State Initialization:
+   - `taskListData`: Represents the list of tasks. It is initialized as an empty array using the `useState` hook.
+
+2. Event Handlers:
+   - `handleTaskCompletion`: This function handles the completion of a task. It sets the `completed` property of the corresponding task in the `taskListData` array to `true`.
+
+   - `isTaskCompleted`: This function checks if a task at a given index is completed by accessing the `completed` property of the task in the `taskListData` array.
+
+   - `calculateProgress`: This function calculates the overall progress by filtering the `taskListData` array to get the completed tasks and dividing it by the total number of tasks.
+
+   - `handleDeleteTask`: This function handles the deletion of a task. It uses the `splice` method to remove the task from the `taskListData` array.
+
+3. Render:
+   - The `render` method displays the progress information, the task list, and a button to add a new task.
+   - The progress information includes the progress percentage, the number of completed tasks, and the total number of tasks.
+   - The task list is rendered using the `map` function on the `taskListData` array. It displays each task with an input field, a "Completed" button, and a "Delete" button.
+   - The input field allows users to edit the task title. Pressing the Enter key creates a new empty task and appends it to the `taskListData` array.
+   - The "Completed" button triggers the `handleTaskCompletion` function to mark the task as completed. It is disabled if the task is already completed.
+   - The "Delete" button triggers the `handleDeleteTask` function to remove the task from the `taskListData` array.
+
 ## Available Scripts
 
 In the project directory, you can run:
